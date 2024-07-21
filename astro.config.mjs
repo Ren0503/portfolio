@@ -5,7 +5,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:4231',
+  site:  process.env.CI
+  ? 'https://portfolio-gold-one-56.vercel.app'
+  : 'http://localhost:4321',
   integrations: [react(), tailwind({
     applyBaseStyles: false,
   })]
