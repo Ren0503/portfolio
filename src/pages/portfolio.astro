@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { PROJECTS } from '../lib/constants'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+---
+
+<Layout
+  title="Portfolio"
+  description="Projects and some clone's that I did"
+>
+  <main class="flex min-h-[80vh] flex-auto flex-col">
+        <TopLayout>
+      <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        Project and clone's
+      </h2>
+    </TopLayout>
+    <BottomLayout>
+      <div class="flex w-full flex-wrap justify-center gap-2">
+        {
+          PROJECTS.map((project) => (
+            <ProjectCard 
+              key={project.id}
+              href={project.website}
+              heading={project.name}
+              subheading={project.description}
+              imagePath={project.img}
+              altText={project.name}
+              class="w-full sm:w-2/5"
+            />
+          ))
+        }
+      </div>
+    </BottomLayout>
+  </main>
+</Layout>

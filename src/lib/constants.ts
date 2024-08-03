@@ -31,3 +31,14 @@ export const STUDIES = [
     date: '2018 - 2022',
   },
 ]
+
+export const PROJECTS = [
+  {
+    id: 1,
+    name: 'HROS',
+    description: "HR applications for the end to end management of an Employee’s Lifecycle.",
+    img: 'https://paxanimi.ai/_next/image?url=%2Fimages%2Fhome.webp&w=828&q=75',
+    website: 'https://paxanimi.ai',
+    repository: 'https://github.com'
+  }
+]
